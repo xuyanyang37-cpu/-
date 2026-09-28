@@ -1,0 +1,9 @@
+interface,command_or_signal,status,evidence,notes
+PMBus/I2C,7-bit address 0x58,observed,user ESP32 scan/read,Confirm whether this is 7-bit address and capture raw transactions
+PMBus,READ_VOUT,observed,user reported raw 0x18DF,Decode using configured VOUT_MODE before interpreting
+PMBus,STATUS_WORD,observed,user reported 0x0002,Decode status bits against device behavior
+PMBus,READ_FAN_SPEED,observed,user reported approximately 4256 RPM,Confirm exact command and format
+PMBus,READ_TEMPERATURE,observed,user reported 46/35/40 C,Map each sensor to command
+PMBus,VOUT_COMMAND,unknown,not yet proven writable,Do not write during discovery
+PMBus,OCP/OVP commands,unknown,not yet recovered,Need firmware dispatch and hardware correlation
+ICSP,dsPIC programming pins,unknown,board mapping not available,Do not attempt erase/program
